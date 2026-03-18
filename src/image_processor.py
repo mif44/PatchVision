@@ -11,23 +11,23 @@ class ImageProcessor:
             self.file_name = os.path.splitext(self.name)[0] 
             self.image = image.copy()
 
-
+    
     def show_size(self) -> tuple:
         return self.image.size
 
-
+    
     def save_grayscale(self) -> None:
         image = self.image.convert("L")
         image.save(f"assets/grayscale/{self.file_name}_gray.jpg")
         print("The photo has been saved.")
 
-
+    
     def save_blur(self) -> None:
         image = self.image.filter(filter=ImageFilter.BLUR)
         image.save(f"assets/blur/{self.file_name}_blur.jpg")
         print("The photo has been saved.")
 
-
+    
     def save_invert(self) -> None:
         mode = self.image.mode
         if mode in ["RGB", "L"]:
@@ -37,13 +37,13 @@ class ImageProcessor:
         else:
             raise ValueError("Incorrect photo mode")
 
-
+    
     def save_sharpen(self) -> None:
         image = self.image.filter(filter=ImageFilter.SHARPEN)
         image.save(f"assets/sharpen/{self.file_name}_sharpen.jpg")
         print("The photo has been saved.")
 
-
+    
     def save_sepia(self) -> None:
         image = self.image.convert("RGB")
 
@@ -63,7 +63,7 @@ class ImageProcessor:
         image.save(f"assets/upscale/{self.file_name}_upscale.jpg")
         print("The photo has been saved.")
 
-
+    
     def data_entry_verification(self, width: int, height: int) -> bool:
         if not isinstance(width, int) or not isinstance(height, int):
             print("Incorrect data provided")
@@ -77,7 +77,7 @@ class ImageProcessor:
         else:
             return True
 
-
+   
     def save_resize(self, width: int, height: int) -> None:
         if not self.data_entry_verification(width, height):
             return
@@ -86,7 +86,7 @@ class ImageProcessor:
         image.save(f"assets/resize/{self.file_name}_{width}x{height}.jpg")
         print("The photo has been saved.")
 
-
+    
     def save_resize_keep_aspect(self, width: int, height: int) -> None:
         if not self.data_entry_verification(width, height):
             return 
@@ -96,7 +96,7 @@ class ImageProcessor:
         image.save(f"assets/resize_keep_aspect/{self.file_name}_{wid}x{hei}.jpg")
         print("The photo has been saved.")
 
-
+    
     def save_center_crop(self, width: int, height: int) -> None:
         if not self.data_entry_verification(width, height):
             return
@@ -111,7 +111,7 @@ class ImageProcessor:
         right = x + (width/2)
         top = y - (height/2)
         bottom = y + (height/2)
-        image = self.image.crop((int(left, top, right, bottom)))
+        image = self.image.crop((int(left), int(top), int(right), int(bottom)))
         image.save(f"assets/center_crop/{self.file_name}_{width}x{height}.jpg")
         print("The photo has been saved.")
     
