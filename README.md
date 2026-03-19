@@ -34,7 +34,7 @@ A CLI project for local image processing in Python using **Typer** and **Pillow*
   </tr>
   <tr>
     <td align="center"><b>Invert</b></td>
-    <td align="center"><b>Sepia</b></td>
+    <td align="center"><b>Sharpen</b></td>
   </tr>
   <tr>
     <td><img src="./assets/invert/test_invert.jpg" width="360" alt="Invert result" /></td>
