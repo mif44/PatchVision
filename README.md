@@ -42,7 +42,7 @@ A CLI project for local image processing in Python using **Typer** and **Pillow*
   </tr>
 </table>
 
-## Геометрия
+## Geometry
 
 <table>
   <tr>
