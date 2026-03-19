@@ -38,11 +38,19 @@ A CLI project for local image processing in Python using **Typer** and **Pillow*
   </tr>
   <tr>
     <td><img src="./assets/invert/test_invert.jpg" width="360" alt="Invert result" /></td>
-    <td><img src="./assets/sepia/test_sepia.jpg" width="360" alt="Sepia result" /></td>
-  </tr>
-</table>
+    <td><img src="./assets/sharpen/test_sharpen.jpg" width="360" alt="Sharpen result" /></td>
+      </tr>
+      <tr>
+        <td align="center"><b>Sepia</b></td>
+        <td align="center"><b>Upscale</b></td>
+      </tr>
+      <tr>
+        <td><img src="./assets/sepia/test_sepia.jpg" width="360" alt="Sepia result" /></td>
+        <td><img src="./assets/upscale/test_upscale.jpg" width="360" alt="Upscale result" /></td>
+      </tr>
+    </table>
 
-## Geometry
+## Geometry operation
 
 <table>
   <tr>
@@ -54,6 +62,19 @@ A CLI project for local image processing in Python using **Typer** and **Pillow*
     <td><img src="./assets/resize/test_300x300.jpg" width="240" alt="Resize result" /></td>
     <td><img src="./assets/resize_keep_aspect/test_300x262.jpg" width="240" alt="Resize keep aspect result" /></td>
     <td><img src="./assets/center_crop/test_300x300.jpg" width="240" alt="Center crop result" /></td>
+  </tr>
+</table>
+
+### Pipeline example
+
+<table>
+  <tr>
+    <td align="center"><b>Input image</b></td>
+    <td align="center"><b>Pipeline result</b></td>
+  </tr>
+  <tr>
+    <td><img src="./photos/test.jpg" width="320" alt="Pipeline input image" /></td>
+    <td><img src="./assets/output/test.jpg" width="224" alt="Pipeline output image" /></td>
   </tr>
 </table>
 
@@ -158,7 +179,7 @@ python main.py image center-crop test 300 300
 #### Batch Processing
 
 ```bash
-python main.py pipeline
+python main.py pipeline pipeline
 ```
 
 ## Where the result is saved
