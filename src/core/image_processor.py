@@ -10,8 +10,9 @@ class ImageProcessor:
             self.name = os.path.basename(path)
             self.file_name = os.path.splitext(self.name)[0] 
             self.image = image.copy()
+            self.format = os.path.splitext(self.name)[1]
+        
 
-    
     def show_size(self) -> tuple:
         return self.image.size
 
@@ -115,3 +116,27 @@ class ImageProcessor:
         image.save(f"assets/center_crop/{self.file_name}_{width}x{height}.jpg")
         print("The photo has been saved.")
     
+
+    def prepare_image_256(self, width: int = 256 ,height: int = 256) -> None:
+        self.image = ImageOps.contain(self.image, (width, height))
+        return self.image
+
+
+    def processing_center_crop(self, width: int = 224 ,height: int = 224) -> None:
+        wid, hei = self.image.size
+        x = wid / 2
+        y = hei / 2
+        left = x - (width/2)
+        right = x + (width/2)
+        top = y - (height/2)
+        bottom = y + (height/2)
+        self.image = self.image.crop((int(left), int(top), int(right), int(bottom)))
+        return self.image
+    
+    def processing_sharpen(self) -> None:
+        self.image = self.image.filter(filter=ImageFilter.SHARPEN)
+        return self.image
+    
+
+    def save_pipeline(self) -> None:
+        self.image.save(f"assets/output/{self.file_name}{self.format}")

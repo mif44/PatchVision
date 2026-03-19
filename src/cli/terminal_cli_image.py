@@ -1,8 +1,8 @@
 import typer
 from pathlib import Path
 
-from src.image_processor import ImageProcessor
-from utils.terminal_clear import clean_terminal
+from src.core.image_processor import ImageProcessor
+from src.utils.terminal_clear import clean_terminal
 
 image_app = typer.Typer(help="Processing images from the `photos` folder.",
     no_args_is_help=True,
@@ -11,7 +11,7 @@ image_app = typer.Typer(help="Processing images from the `photos` folder.",
 Examples:
 
 python main.py image info "file name"\n
-python main.py image show_size "file name"\n
+python main.py image show-size "file name"\n
 python main.py image grayscale "file name"\n
 python main.py image blur "file name"\n 
 python main.py image invert "file name"\n
