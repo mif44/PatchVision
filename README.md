@@ -17,6 +17,46 @@ A CLI project for local image processing in Python using **Typer** and **Pillow*
 - `center-crop` — crop image to center
 - `pipeline` — batch process all images from the `photos` folder
 
+## Results preview
+
+### Original
+
+![Original](photos/test.jpg)
+
+<table>
+  <tr>
+    <td align="center"><b>Grayscale</b></td>
+    <td align="center"><b>Blur</b></td>
+  </tr>
+  <tr>
+    <td><img src="./assets/grayscale/test_gray.jpg" width="360" alt="Grayscale result" /></td>
+    <td><img src="./assets/blur/test_blur.jpg" width="360" alt="Blur result" /></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Invert</b></td>
+    <td align="center"><b>Sepia</b></td>
+  </tr>
+  <tr>
+    <td><img src="./assets/invert/test_invert.jpg" width="360" alt="Invert result" /></td>
+    <td><img src="./assets/sepia/test_sepia.jpg" width="360" alt="Sepia result" /></td>
+  </tr>
+</table>
+
+## Геометрия
+
+<table>
+  <tr>
+    <td align="center"><b>Resize 300×300</b></td>
+    <td align="center"><b>Resize keep aspect</b></td>
+    <td align="center"><b>Center crop</b></td>
+  </tr>
+  <tr>
+    <td><img src="./assets/resize/test_300x300.jpg" width="240" alt="Resize result" /></td>
+    <td><img src="./assets/resize_keep_aspect/test_300x262.jpg" width="240" alt="Resize keep aspect result" /></td>
+    <td><img src="./assets/center_crop/test_300x300.jpg" width="240" alt="Center crop result" /></td>
+  </tr>
+</table>
+
 ## What you need
 
 Before starting You need:
@@ -133,48 +173,6 @@ python main.py pipeline
 - `resize-keep-aspect` → `assets/resize_keep_aspect/`
 - `center-crop` → `assets/center_crop/`
 - `pipeline` → `assets/output/`
-
-## Result examples
-
-### Original
-
-![Original](photos/test.jpg)
-
-### Grayscale
-
-![Grayscale](assets/grayscale/test_gray.jpg)
-
-###Blur
-
-![Blur](assets/blur/test_blur.jpg)
-
-### Invert
-
-![Invert](assets/invert/test_invert.jpg)
-
-### Sharpen
-
-![Sharpen](assets/sharpen/test_sharpen.jpg)
-
-### Sepia
-
-![Sepia](assets/sepia/test_sepia.jpg)
-
-###Upscale
-
-![Upscale](assets/upscale/test_upscale.jpg)
-
-### Resize 300x300
-
-![Resize](assets/resize/test_300x300.jpg)
-
-### Resize keep Aspect
-
-![Resize keep aspect](assets/resize_keep_aspect/test_300x262.jpg)
-
-### Center crop 300x300
-
-![Center crop](assets/center_crop/test_300x300.jpg)
 
 ## Pipeline
 
